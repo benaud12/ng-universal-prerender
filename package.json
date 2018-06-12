@@ -7,6 +7,7 @@
     "build": "npm run build:app && npm run build:server",
     "build:app": "ng build --prod",
     "build:server": "ng run demo-universal:server",
+    "postbuild": "concurrently --kill-others --success first -p \"[{name}]\" -n \"serve,generate-routes\" -c \"bgBlue.bold,bgMagenta.bold\" \"node server.js\" \"node generate-routes.js\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -38,6 +39,7 @@
     "@types/node": "~8.9.4",
     "axios": "^0.18.0",
     "codelyzer": "~4.2.1",
+    "concurrently": "^3.5.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
