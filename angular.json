@@ -79,6 +79,12 @@
               "src/favicon.ico",
               "src/assets"
             ]
+          },
+          "configurations": {
+            "headless": {
+              "browsers": "ChromeHeadless",
+              "watch": false
+            }
           }
         },
         "lint": {
@@ -116,6 +122,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "demo-universal:serve:production"
+            },
+            "headless": {
+              "protractorConfig": "e2e/protractor.headless.conf.js"
             }
           }
         },

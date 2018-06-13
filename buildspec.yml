@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      - sudo apt-get update
+      - sudo apt-get --assume-yes install google-chrome-stable
+      - npm install
+  build:
+    commands:
+      - npm run lint
+      - npm run test:ci
+      - npm run e2e:ci
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync dist/browser/ s3://ng-universal.micks-bits.co.uk

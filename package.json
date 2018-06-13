@@ -9,8 +9,10 @@
     "build:server": "ng run demo-universal:server",
     "postbuild": "concurrently --kill-others --success first -p \"[{name}]\" -n \"serve,generate-routes\" -c \"bgBlue.bold,bgMagenta.bold\" \"node server.js\" \"node generate-routes.js\"",
     "test": "ng test",
+    "test:ci": "ng test -c headless",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "e2e:ci": "ng e2e -c headless"
   },
   "private": true,
   "dependencies": {
