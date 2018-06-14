@@ -1,5 +1,7 @@
 # DemoUniversal
 
+![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiTUJpTThocE9IV2toVVdidWFTWW5nY0J1NzJlYXRQWll1S1U2ZkN5NW5PWEpibmNXT3FYM2tqYk51Q00wRkJRbUgza2FQOTlTVlVyN1IwUE1XdWowR1ZvPSIsIml2UGFyYW1ldGVyU3BlYyI6IlhqWU95Z1hMT1l3TGo2dkkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
