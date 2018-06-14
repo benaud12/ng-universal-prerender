@@ -6,5 +6,6 @@ import { FlowersComponent } from './components/flowers/flowers.component';
 export const appRoutes: Routes = [
   { path: '', component: AngularComponent },
   { path: 'beans', component: BeansComponent },
-  { path: 'flowers', component: FlowersComponent }
+  { path: 'flowers', component: FlowersComponent },
+  { path: '**', redirectTo: '' }
 ];

@@ -16,4 +16,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync dist/browser/ s3://ng-universal.micks-bits.co.uk
+      - aws s3 sync dist/browser/ s3://ng-universal.micks-bits.co.uk/tmp --exclude "*" --include "*.*" --delete
+      - aws s3 sync dist/browser/ s3://ng-universal.micks-bits.co.uk/tmp --exclude "*.*" --content-type text/html --delete
+      - aws s3 sync s3://ng-universal.micks-bits.co.uk/tmp s3://ng-universal.micks-bits.co.uk --delete
+      - aws s3 rm s3://ng-universal.micks-bits.co.uk/tmp --recursive
